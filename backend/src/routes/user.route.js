@@ -1,5 +1,8 @@
-import { Router } from "express"; // Import the Router class from the express
+// Import the Router class from the express
+import { Router } from "express"; 
 
-const router = Router(); // create a new router instance
+// create a new router instance
+const router = Router(); 
 
-export default router; // export the router instance for use in other parts of the application
+// export the router instance for use in other parts of the application
+export default router; 

@@ -1,28 +1,37 @@
-import dotenv from "dotenv"; //Import dotenv module to load environment variables from .env file
+//Import dotenv module to load environment variables from .env file
+import dotenv from "dotenv"; 
+
+//Specify the path to the .env file
 dotenv.config({
-    path: "./.env" //Specify the path to the .env file
+    path: "./.env" 
 })
 
-import connectDB from "./config/database.js"; //Import the connectDB function to establish a connection to the database
+//Import the connectDB function to establish a connection to the database
+import connectDB from "./config/database.js"; 
 
-import app from "./app.js"; //Import the express application instance
+//Import the express application instance
+import app from "./app.js"; 
 
-
-const startServer = async () => { //Function to start the server
+//Function to start the server
+const startServer = async () => { 
     try {
-        await connectDB(); //Connect to the database
-
-        app.on("error", (error) => { //Handle server errors
+        //Connect to the database
+        await connectDB(); 
+        //Handle server errors
+        app.on("error", (error) => { 
             console.error("Server error:", error);
         throw error;
     });
-
-    app.listen(process.env.PORT || 5001, () => { //Start the server and listen on the specified port
+    //Start the server and listen on the specified port
+    app.listen(process.env.PORT || 5001, () => { 
         console.log(`Server is running on port ${process.env.PORT}`);
     });
+    
     }catch (error){
-        console.error("MongoDB connection failed", error); //Log any errors that occur during the database connection
+        //Log any errors that occur during the database connection
+        console.error("MongoDB connection failed", error); 
     }
 }
 
-startServer(); //Call the startServer function to initialize the server and connect to the database
+//Call the startServer function to initialize the server and connect to the database
+startServer(); 

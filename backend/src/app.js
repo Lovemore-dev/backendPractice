@@ -1,5 +1,8 @@
-import express from "express"; //Import express module
+//Import express module
+import express from "express"; 
 
-const app = express(); //Create an express application
+//Create an express application
+const app = express(); 
 
-export default app; //export express application for use in other modules
+//export express application for use in other modules
+export default app; 
