@@ -24,10 +24,13 @@ const userSchema = new Schema(
         type: String,
         required: true,
         minlength: 6,
-        maxlength: 50,
-    },
-    timestamps: true,   
-});
+    }, 
+},
+{
+    timestamps: true
+}
 
-// Export the User model based on the user schema
+);
+
+// Export the User model based on the user
 export const User = mongoose.model("User", userSchema);
