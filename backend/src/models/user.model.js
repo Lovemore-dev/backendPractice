@@ -1,0 +1,33 @@
+// Import the mongoose llibrary and the Schema class from mongoose
+import mongoose, {Schema} from "mongoose";
+
+// Define the user schema with the required fields and their validation rules
+const userSchema = new Schema(
+    {
+    username: {
+        type: String,
+        required: true,
+        unique: true,
+        minlength: 3,
+        maxlength: 10,
+        lowercase: true,
+        trim: true
+    },
+    email:{
+        type: String,
+        required: true,
+        unique: true,
+        lowercase: true,
+        trim: true
+    },
+    password: {
+        type: String,
+        required: true,
+        minlength: 6,
+        maxlength: 50,
+    },
+    timestamps: true,   
+});
+
+// Export the User model based on the user schema
+export const User = mongoose.model("User", userSchema);
