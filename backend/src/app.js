@@ -14,7 +14,7 @@ import userRouter from "./routes/user.route.js";
 app.use("/api/v1/users", userRouter);
 
 
-// example route http://localhost:5001/api/v1
+// example route http://localhost:5000/api/v1/users/register
 
 //export express application for use in other modules
 export default app; 
